@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>for beloved Dul 💙</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 35px;
+            max-width: 520px;
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.4em;
+        }
+
+        .photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            margin: 15px 0;
+        }
+
+        .flowers {
+            width: 70px;
+            margin: 5px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .heart {
+            font-size: 2.6em;
+            animation: beat 1s infinite;
+            margin: 10px 0;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* ===== LIRIK BERJALAN ===== */
+        .lyrics-box {
+            margin-top: 25px;
+            height: 120px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding: 10px 0;
+        }
+
+        .lyrics {
+            animation: scrollLyrics 30s linear infinite;
+            font-size: 1em;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        @keyframes scrollLyrics {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #00c6ff;
+            color: #003366;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>morning lup, met hari rabu</h1>
+
+        <!-- FOTO PASANGAN -->
+        <img src="dul.PNG" alt="Foto Kamu" class="photo">
+
+        <!-- BUNGA -->
+        <div>
+            <img src="dul1.PNG" class="flowers">
+            <img src="dul3.PNG" class="flowers">
+            <img src="dul4.PNG" class="flowers">
+        </div>
+
+        <div class="heart">💐🌷🌹🌸🌺</div>
+
+        <p>
+            buah tomat buah jambu<br>
+            met hari rabu buat kamu yang manis melebihi madu<br>
+            bikin jatuh cinta tiap waktu<br>
+            pagi - pagi enaknya dengerin Soft Spot - Keshi<br>
+        </p>
+
+        <!-- LIRIK BERJALAN -->
+        <div class="lyrics-box">
+            <div class="lyrics">
+Don't need somebody else 
+to throw me aside
+
+But I'm up all night, thinkin' 'bout how
+
+It could be you to 
+change my heart, but I
+
+Don't like anybody, tell me 
+why it's different with you
+
+Don't believe in love, but no 
+one makes me feel like you do
+
+I don't say it much 'cause I 
+just always thought that
+
+You knew, oh
+
+It's what you do to me
+
+I'm wrapped around your finger 
+and I can't stop
+
+You know I got a soft spot for you
+You know I got a soft spot for you, dul!
+ <button id="loveBtn">Klik aku</button>
+
+<script>
+    document.getElementById("loveBtn").onclick = function () {
+        alert("Met hari rabu ia my lupp, semangat ngejalanin harinya. Have a nice day, semoga kamu selalu didampingi sm hal - hal baik ia dull. Last, i got a soft spot for u, n cinta aku ke kamu gabakal berkurang seiring waktu, love u!");
+    };
+</script>
+
+
+</body>
+</html>
