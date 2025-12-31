@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>for beloved Dul 💙</title>
     <style>
         body {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             text-align: center;
             padding: 40px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card {
             background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 35px;
             max-width: 520px;
-            margin: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         h1 {
-            font-size: 2.4em;
+            font-size: 1.8em;
+            margin-bottom: 10px;
         }
 
         .photo {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #ffffff;
             margin: 15px 0;
         }
 
+        .flowers-container {
+            margin: 10px 0;
+        }
+
         .flowers {
-            width: 70px;
+            width: 60px;
+            height: 60px;
             margin: 5px;
+            border-radius: 10px;
+            object-fit: cover;
             animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
-            0% { transform: translateY(0); }
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
         }
 
         .heart {
-            font-size: 2.6em;
-            animation: beat 1s infinite;
+            font-size: 2em;
             margin: 10px 0;
         }
 
-        @keyframes beat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-
         p {
-            font-size: 1.1em;
+            font-size: 1em;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         /* ===== LIRIK BERJALAN ===== */
         .lyrics-box {
-            margin-top: 25px;
             height: 120px;
-            overflow: hidden;
-            border-top: 1px solid rgba(255,255,255,0.4);
-            border-bottom: 1px solid rgba(255,255,255,0.4);
-            padding: 10px 0;
+            overflow-y: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 15px 10px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         .lyrics {
-            animation: scrollLyrics 30s linear infinite;
-            font-size: 1em;
-            line-height: 1.8;
-            white-space: pre-line;
-        }
-
-        @keyframes scrollLyrics {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
+            font-size: 0.95em;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: center;
         }
 
         button {
-            margin-top: 20px;
-            padding: 12px 25px;
+            margin-top: 25px;
+            padding: 12px 30px;
             border: none;
             border-radius: 30px;
             background: #00c6ff;
             color: #003366;
+            font-weight: bold;
             font-size: 1em;
             cursor: pointer;
             transition: 0.3s;
@@ -103,19 +106,19 @@
 
         button:hover {
             background: white;
+            transform: scale(1.05);
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
         <h1>morning lup, met hari rabu</h1>
 
-        <!-- FOTO PASANGAN -->
-        <img src="dul.PNG" alt="Foto Kamu" class="photo">
+        <img src="dul.PNG" alt="Foto Dul" class="photo">
 
-        <!-- BUNGA -->
-        <div>
+        <div class="flowers-container">
             <img src="dul1.PNG" class="flowers">
             <img src="dul3.PNG" class="flowers">
             <img src="dul4.PNG" class="flowers">
@@ -127,46 +130,63 @@
             buah tomat buah jambu<br>
             met hari rabu buat kamu yang manis melebihi madu<br>
             bikin jatuh cinta tiap waktu<br>
-            pagi - pagi enaknya dengerin Soft Spot - Keshi<br>
+            morning song for u: Soft Spot - Keshi<br>
+            semangat ngejalanin hari ini ia btw, i always be by your side. Have a nice day!
         </p>
 
-        <!-- LIRIK BERJALAN -->
         <div class="lyrics-box">
-            <div class="lyrics">
-Don't need somebody else 
-to throw me aside
+            <div class="lyrics" id="lyrics"></div>
+        </div>
+
+        <button id="loveBtn">Klik ini dul</button>
+    </div>
+
+    <script>
+        // Menggunakan backticks (`) agar teks bisa multiline
+        const text = `Don't need somebody else to throw me aside
 
 But I'm up all night, thinkin' 'bout how
 
-It could be you to 
-change my heart, but I
+It could be you to change my heart, but I
 
-Don't like anybody, tell me 
-why it's different with you
+Don't like anybody, tell me why it's different with you
 
-Don't believe in love, but no 
-one makes me feel like you do
+Don't believe in love, but no one makes me feel like you do
 
-I don't say it much 'cause I 
-just always thought that
+I don't say it much 'cause I just always thought that
 
 You knew, oh
 
 It's what you do to me
 
-I'm wrapped around your finger 
-and I can't stop
+I'm wrapped around your finger and I can't stop
 
 You know I got a soft spot for you
-You know I got a soft spot for you, dul!
- <button id="loveBtn">Klik aku</button>
 
-<script>
-    document.getElementById("loveBtn").onclick = function () {
-        alert("Met hari rabu ia my lupp, semangat ngejalanin harinya. Have a nice day, semoga kamu selalu didampingi sm hal - hal baik ia dull. Last, i got a soft spot for u, n cinta aku ke kamu gabakal berkurang seiring waktu, love u!");
-    };
-</script>
+You know I got a soft spot for you, dul!`;
 
+        const lyricsElement = document.getElementById("lyrics");
+        let index = 0;
+
+        // Fungsi efek mengetik
+        function typeWriter() {
+            if (index < text.length) {
+                lyricsElement.textContent += text.charAt(index);
+                index++;
+                // Scroll otomatis ke bawah saat teks bertambah
+                document.querySelector('.lyrics-box').scrollTop = document.querySelector('.lyrics-box').scrollHeight;
+                setTimeout(typeWriter, 50); 
+            }
+        }
+
+        // Mulai mengetik saat halaman dimuat
+        window.onload = typeWriter;
+
+        // Alert tombol
+        document.getElementById("loveBtn").onclick = function () {
+            alert("Met hari rabu ia my lupp, semangat ngejalanin harinya. Have a nice day, semoga kamu selalu didampingi sm hal - hal baik ia dull. Last, i got a soft spot for u, n cinta aku ke kamu gabakal berkurang seiring waktu, love u!");
+        };
+    </script>
 
 </body>
 </html>
